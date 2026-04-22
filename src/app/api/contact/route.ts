@@ -2,33 +2,32 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const body = await req.json();
-
-  const { name, phone, message } = body;
+  const { name, phone, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "reyanshenergy1@gmail.com",
-      pass: "Rhythm@2026", 
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Website Lead" <reyanshenergy1@gmail.com>`,
-      to: "reyanshenergy1@gmail.com",
+      from: `"Reyansh Energy" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
       subject: "New Solar Inquiry",
-      text: `
-        Name: ${name}
-        Phone: ${phone}
-        Message: ${message}
+      html: `
+        <h2>New Inquiry Received</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong> ${message}</p>
       `,
     });
 
     return NextResponse.json({ success: true });
-  } catch (err) {
-  console.log(err);
-  return NextResponse.json({ success: false });
-}
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ success: false });
+  }
 }

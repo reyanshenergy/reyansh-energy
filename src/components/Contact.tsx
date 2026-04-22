@@ -22,8 +22,9 @@ export default function Contact() {
 
     if (res.ok) {
       alert("Message Sent Successfully!");
+      form.reset();
     } else {
-      alert("Something went wrong!");
+      alert("Failed to send message");
     }
   };
   return (
@@ -97,7 +98,7 @@ export default function Contact() {
         <input type="hidden" name="_next" value="http://localhost:3000" />
 
         <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold">
-          Request Callback
+          Send Message
         </button>
       </form>
     </section>
