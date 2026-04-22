@@ -5,22 +5,19 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white px-6">
-
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-
         {/* LEFT TEXT */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-6">
-            About Reyansh Energy
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">About Reyansh Energy</h2>
 
           <p className="text-gray-600 mb-4">
-            Reyansh Energy is a growing solar solutions provider focused on delivering
-            affordable and efficient energy systems for homes and businesses.
+            Reyansh Energy is a growing solar solutions provider focused on
+            delivering affordable and efficient energy systems for homes and
+            businesses.
           </p>
 
           <p className="text-gray-600">
@@ -31,9 +28,10 @@ export default function About() {
 
         {/* RIGHT TRUST BOXES */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="grid grid-cols-2 gap-6"
         >
           <div className="bg-green-100 p-6 rounded-xl text-center">
@@ -56,7 +54,6 @@ export default function About() {
             <p className="text-gray-700">Customer First Approach</p>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
