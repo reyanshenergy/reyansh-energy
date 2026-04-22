@@ -1,36 +1,50 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="text-center py-24 bg-linear-to-r from-green-500 to-green-700 text-white">
+    <section className="relative h-[85vh] flex items-center justify-center text-white">
+      {/* Background Image */}
+      <Image
+        src="/images/solar-hero.jpg"
+        alt="Solar engineer working on solar panel"
+        fill
+        priority
+        className="object-cover"
+      />
 
-      <motion.h1
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold mb-6"
-      >
-        Power Your Future with Solar Energy
-      </motion.h1>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="text-lg mb-8 max-w-xl mx-auto"
-      >
-        Reduce your electricity bills and switch to clean energy today.
-      </motion.p>
+      {/* Content */}
+      <div className="relative text-center px-6">
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Power Your Future with Solar Energy
+        </h1>
 
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold"
-      >
-        Get a Quote
-      </motion.button>
+        <p className="mt-4 text-lg text-gray-200">
+          Save electricity bills and switch to clean energy today
+        </p>
 
+        <div className="mt-6 flex gap-4 justify-center">
+          <a
+            href="#contact"
+            className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full font-semibold"
+          >
+            Get a Quote
+          </a>
+
+          <a
+            href="https://wa.me/919212101007"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white px-6 py-3 rounded-full"
+          >
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
