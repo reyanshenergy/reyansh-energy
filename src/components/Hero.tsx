@@ -17,11 +17,15 @@ export default function Hero() {
         className="object-cover object-top md:object-center"
       />
 
+      <h1>Solar Panel Installation in Delhi</h1>
+      <h2>Our Solar Services</h2>
+      <h2>Why Choose Reyansh Energy</h2>
+      <h2>Contact Solar Experts</h2>
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl">
-        
         {/* LOTTIE ANIMATION - Positioned above the text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -44,7 +48,8 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold leading-tight"
           >
-            Power Your Future with <span className="text-green-400">Solar Energy</span>
+            Power Your Future with{" "}
+            <span className="text-green-400">Solar Energy</span>
           </motion.h1>
 
           <motion.p
@@ -53,7 +58,8 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
           >
-            Save on electricity bills and switch to clean, renewable energy today.
+            Save on electricity bills and switch to clean, renewable energy
+            today.
           </motion.p>
 
           <motion.div
@@ -62,14 +68,14 @@ export default function Hero() {
             transition={{ delay: 0.9 }}
             className="mt-8 flex gap-4 justify-center"
           >
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105"
             >
               Get a Quote
             </a>
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="border-2 border-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-bold transition-all"
             >
               Learn More

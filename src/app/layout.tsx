@@ -4,7 +4,8 @@ import "./globals.css";
 // This replaces your old metadata block
 export const metadata: Metadata = {
   title: "Reyansh Energy | Solar Solutions in India",
-  description: "Affordable solar panel installation for homes and businesses. Save electricity bills with Reyansh Energy.",
+  description:
+    "Affordable solar panel installation for homes and businesses. Save electricity bills with Reyansh Energy.",
   openGraph: {
     title: "Reyansh Energy",
     description: "Switch to solar and save electricity bills",
@@ -29,6 +30,22 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Reyansh Energy",
+              telephone: "+919212101007",
+              url: "https://reyanshenergy.in",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
