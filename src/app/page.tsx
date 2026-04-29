@@ -11,14 +11,18 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
+     
+      <main className="pt-18">
         <Hero />
         <Services />
-        <Trust />        
+        <Trust />
         <About />
         <Contact />
+      </main>
+
       <Footer />
       <Whatsapp />
-     
     </>
   );
 }

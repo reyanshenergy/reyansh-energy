@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Lottie from "lottie-react";
-import animationData from "../animations/solar.json"; // Ensure this path is correct
+// import Lottie from "lottie-react";
+// import animationData from "../animations/solar.json"; 
 
 export default function Hero() {
   return (
@@ -17,11 +17,7 @@ export default function Hero() {
         className="object-cover object-top md:object-center"
       />
 
-      <h1>Solar Panel Installation in Delhi</h1>
-      <h2>Our Solar Services</h2>
-      <h2>Why Choose Reyansh Energy</h2>
-      <h2>Contact Solar Experts</h2>
-
+      
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
@@ -33,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="w-32 h-32 md:w-48 md:h-48 mb-4"
         >
-          <Lottie animationData={animationData} loop={true} />
+          {/* <Lottie animationData={animationData} loop={true} /> */}
         </motion.div>
 
         {/* Text Content */}
